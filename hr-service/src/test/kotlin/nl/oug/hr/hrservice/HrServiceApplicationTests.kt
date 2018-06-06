@@ -1,6 +1,7 @@
 package nl.oug.hr.hrservice
 
 import com.intuit.karate.cucumber.CucumberRunner
+import cucumber.api.CucumberOptions
 import junit.framework.Assert.assertEquals
 import net.masterthought.cucumber.Configuration
 import net.masterthought.cucumber.ReportBuilder
@@ -16,6 +17,7 @@ import java.util.stream.Collectors
 
 @RunWith(SpringRunner::class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@CucumberOptions(tags = ["~@ignore"])
 class HrServiceApplicationTests {
 
 	@LocalServerPort
