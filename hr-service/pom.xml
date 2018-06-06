@@ -57,6 +57,19 @@
 			<artifactId>reactor-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>com.intuit.karate</groupId>
+			<artifactId>karate-apache</artifactId>
+			<version>0.7.0</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.intuit.karate</groupId>
+			<artifactId>karate-junit4</artifactId>
+			<version>0.7.0</version>
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
