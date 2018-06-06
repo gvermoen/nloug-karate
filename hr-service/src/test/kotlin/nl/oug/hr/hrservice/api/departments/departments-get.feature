@@ -1,7 +1,7 @@
 Feature: Retrieve departments
 
   Background:
-    Given url 'http://localhost:8080/api'
+    Given url baseUrl
 
   Scenario: Get all departments
     Given path 'departments'

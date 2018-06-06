@@ -1,7 +1,8 @@
 Feature: Create new departments
 
   Background:
-    Given url "http://localhost:8080/api/departments"
+    Given url baseUrl
+    And path 'departments'
 
   Scenario: Create a new department
     Given request { departmentId: 10, departmentName: "Administration", managerId: 200, locationId: 1700 }
