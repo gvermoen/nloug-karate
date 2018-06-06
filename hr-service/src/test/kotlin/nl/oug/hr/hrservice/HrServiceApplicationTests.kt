@@ -1,10 +1,13 @@
 package nl.oug.hr.hrservice
 
+import com.intuit.karate.FileUtils
 import com.intuit.karate.cucumber.CucumberRunner
+import com.intuit.karate.netty.FeatureServer
 import cucumber.api.CucumberOptions
 import junit.framework.Assert.assertEquals
 import net.masterthought.cucumber.Configuration
 import net.masterthought.cucumber.ReportBuilder
+import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.springframework.boot.test.context.SpringBootTest
@@ -17,11 +20,17 @@ import java.util.stream.Collectors
 
 @RunWith(SpringRunner::class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@CucumberOptions(tags = ["~@ignore"])
+@CucumberOptions(tags = ["~@ignore", "@wip"])
 class HrServiceApplicationTests {
 
 	@LocalServerPort
 	var randomPort: Int = 0
+
+	@Before
+	fun setUp() {
+		val mockFile = FileUtils.getFileRelativeTo(HrServiceApplicationTests::class.java, "common/location-mock.feature")
+		FeatureServer.start(mockFile, 23456, false, null)
+	}
 
 	@Test
 	fun runKarate() {

@@ -70,6 +70,12 @@
 			<version>0.7.0</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>com.intuit.karate</groupId>
+			<artifactId>karate-netty</artifactId>
+			<version>0.7.0</version>
+			<scope>test</scope>
+		</dependency>
 
 		<dependency>
 		    <groupId>de.flapdoodle.embed</groupId>
